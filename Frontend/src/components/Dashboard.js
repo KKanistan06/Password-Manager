@@ -248,7 +248,7 @@ const Dashboard = () => {
         <div className="header-content">
           <h1>Password Manager</h1>
           <div className="user-info">
-            <span>Welcome, {user.email}</span>
+            <span>Welcome, {user.firstName}</span>
             <button onClick={handleLogout} className="logout-btn">Logout</button>
           </div>
         </div>
