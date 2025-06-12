@@ -28,13 +28,10 @@ const SignIn = () => {
 
     try {
       const response = await axios.post('http://localhost:8000/api/auth/login', formData);
-      
-      // Make sure the user object has the email property that Dashboard expects
       const userData = {
         ...response.data.user,
         email: response.data.user.email || formData.email
       };
-      
       login(userData, response.data.token);
       navigate('/');
     } catch (error) {
@@ -46,38 +43,71 @@ const SignIn = () => {
 
   return (
     <div className="auth-container">
-      <div className="auth-form">
-        <h2>Welcome back </h2>
-        <h4 style={{textAlign:'center'}}>sign in to continue</h4>
-        {error && <div className="error-message">{error}</div>}
-        <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label>Email</label>
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
+      <div className="auth-welcome-section">
+        <div className="welcome-content">
+          <h1>Welcome Back!</h1>
+          <p>Secure your digital life with our advanced password manager</p>
+          <div className="welcome-features">
+            <div className="feature-item">
+              <span className="feature-icon">🔐</span>
+              <span>Bank-level encryption</span>
+            </div>
+            <div className="feature-item">
+              <span className="feature-icon">🌐</span>
+              <span>Access anywhere, anytime</span>
+            </div>
+            <div className="feature-item">
+              <span className="feature-icon">⚡</span>
+              <span>Auto-fill & sync across devices</span>
+            </div>
           </div>
-          <div className="form-group">
-            <label>Password</label>
-            <input
-              type="password"
-              name="password"
-              value={formData.password}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <button type="submit" disabled={loading} className="auth-btn">
-            {loading ? 'Signing In...' : 'Sign In'}
-          </button>
-        </form>
-        <p>
-          Don't have an account? <Link to="/signup">Sign up</Link>
-        </p>
+        </div>
+      </div>
+      
+      <div className="auth-form-section">
+        <div className="auth-form">
+          <h2>Sign In</h2>
+          
+          {error && <div className="error-message">{error}</div>}
+          
+          <form onSubmit={handleSubmit}>
+            <div className="form-group">
+              <label htmlFor="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            
+            <div className="form-group">
+              <label htmlFor="password">Password</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            
+            <button 
+              type="submit" 
+              className="auth-btn" 
+              disabled={loading}
+            >
+              {loading ? 'Signing In...' : 'Sign In'}
+            </button>
+          </form>
+          
+          <p>
+            Don't have an account? <Link to="/signup">Sign up</Link>
+          </p>
+        </div>
       </div>
     </div>
   );
