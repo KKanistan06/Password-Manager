@@ -1,17 +1,71 @@
 .auth-container {
   min-height: 100vh;
   display: flex;
+  background: white;
+}
+
+/* Welcome Section (Left Side) */
+.auth-welcome-section {
+  flex: 1;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   padding: 2rem;
+  color: white;
+}
+
+.welcome-content {
+  max-width: 400px;
+  text-align: center;
+}
+
+.welcome-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.welcome-content > p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.welcome-features {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.1rem;
+}
+
+.feature-icon {
+  font-size: 1.5rem;
+  width: 2rem;
+  text-align: center;
+}
+
+/* Form Section (Right Side) */
+.auth-form-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: #f8f9fa;
 }
 
 .auth-form {
   background: white;
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 400px;
 }
@@ -41,6 +95,7 @@
   border-radius: 6px;
   font-size: 1rem;
   transition: border-color 0.3s ease;
+  box-sizing: border-box;
 }
 
 .form-group input:focus {
@@ -109,4 +164,33 @@
   font-size: 1.2rem;
   color: #667eea;
   font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .auth-container {
+    flex-direction: column;
+  }
+  
+  .auth-welcome-section {
+    min-height: 40vh;
+    flex: none;
+  }
+  
+  .welcome-content h1 {
+    font-size: 2rem;
+  }
+  
+  .welcome-features {
+    gap: 1rem;
+  }
+  
+  .feature-item {
+    font-size: 1rem;
+  }
+  
+  .auth-form-section {
+    flex: none;
+    min-height: 60vh;
+  }
 }
