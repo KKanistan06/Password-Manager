@@ -29,7 +29,7 @@ const SignUp = () => {
     setError('');
 
     try {
-      const response = await axios.post('http://localhost:8000/api/auth/register', formData);
+      const response = await axios.post('password-manager-backend.up.railway.app/api/auth/register', formData);
       const userData = {
         ...response.data.user,
         email: response.data.user.email || formData.email
