@@ -13,6 +13,10 @@ Welcome to the **Password Manager App**! This cutting-edge application securely 
 - **User-Friendly Interface**: Modern and clean UI, making password management simple and intuitive.
 - **Zero Knowledge Architecture**: We don’t store any plain-text passwords—your data is encrypted, and only you have the decryption key.
 
+## 🌐 Live Demo
+
+You can view the live demo of the app on (https://password-managerapp.netlify.app/signin).
+
 ## 📦 Installation
 
 Clone this repository to your local machine to get started.
