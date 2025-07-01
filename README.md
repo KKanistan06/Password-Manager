@@ -15,7 +15,7 @@ Welcome to the **Password Manager App**! This cutting-edge application securely 
 
 ## 🌐 Live Demo
 
-You can view the live demo of the app on (https://password-managerapp.netlify.app/signin).
+You can view the live demo of the app on [Password Manager](https://password-managerapp.netlify.app/signin).
 
 ## 📦 Installation
 
