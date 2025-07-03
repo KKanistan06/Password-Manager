@@ -152,6 +152,12 @@ body {
   color: #9ca3af;
 }
 
+.brand-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: white;
+}
+
 .form-input:focus {
   outline: none;
   border-color: #6366f1;
