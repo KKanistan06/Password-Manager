@@ -27,7 +27,7 @@ const SignIn = () => {
     setError('');
 
     try {
-      const response = await axios.post('password-manager.up.railway.app/api/auth/login', formData);
+      const response = await axios.post('https://password-manager-backend-5d0e.onrender.com/api/auth/login', formData);
       const userData = {
         ...response.data.user,
         email: response.data.user.email || formData.email
@@ -140,3 +140,4 @@ const SignIn = () => {
 };
 
 export default SignIn;
+
